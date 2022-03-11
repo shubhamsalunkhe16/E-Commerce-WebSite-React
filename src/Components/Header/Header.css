@@ -1,0 +1,14 @@
+.brandName,
+.navItem {
+  text-decoration: none;
+  color: white;
+}
+
+.navActive {
+  text-decoration: none;
+  color: #faaf00;
+}
+
+#brandName {
+  color: #faaf00;
+}
