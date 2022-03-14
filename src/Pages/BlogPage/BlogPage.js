@@ -72,7 +72,7 @@ export default function BlogPage() {
         return (
           <Card
             sx={{
-              m: "10px 0px",
+              m: "0px 0px 15px 0px",
               boxShadow: "none",
               p: "15px",
               borderRadius: "20px",

@@ -1,15 +1,27 @@
 import axios from "axios";
 
 export const getAllProducts = async () => {
-  return await axios.get(`https://fakestoreapi.com/products`);
+  try {
+    return await axios.get(`https://fakestoreapi.com/products`);
+  } catch (error) {
+    console.log("Error while fetching ", error);
+  }
 };
 
 export const getProductsByCategory = async (category) => {
-  return await axios.get(
-    `https://fakestoreapi.com/products/category/${category}`
-  );
+  try {
+    return await axios.get(
+      `https://fakestoreapi.com/products/category/${category}`
+    );
+  } catch (error) {
+    console.log("Error while fetching ", error);
+  }
 };
 
 export const getProductById = async (productId) => {
-  return await axios.get(`https://fakestoreapi.com/products/${productId}`);
+  try {
+    return await axios.get(`https://fakestoreapi.com/products/${productId}`);
+  } catch (error) {
+    console.log("Error while fetching ", error);
+  }
 };
