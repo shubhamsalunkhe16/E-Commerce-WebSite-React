@@ -10,6 +10,7 @@ import Zoom from "@mui/material/Zoom";
 import Header from "../Header/Header";
 import AppRoutes from "../../AppRoutes";
 import Footer from "../Footer/Footer";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -60,6 +61,25 @@ export default function BackToTop(props) {
       <Header />
       <Toolbar id="back-to-top-anchor" sx={{ position: "absolute", top: 0 }} />
       <AppRoutes />
+      {/* <Fab
+        color="primary"
+        aria-label="add"
+        size="large"
+        sx={{
+          backgroundColor: "#25d366 ",
+          position: "fixed",
+          bottom: "50px",
+          right: "20px",
+        }}
+        onClick={() => {
+          window.open(
+            "https://api.whatsapp.com/send?phone=919004409190&text=Hi",
+            "_blank"
+          );
+        }}
+      >
+        <WhatsAppIcon fontSize="large" />
+      </Fab> */}
       <Footer />
       <ScrollTop {...props}>
         <Fab color="primary" size="small" aria-label="scroll back to top">

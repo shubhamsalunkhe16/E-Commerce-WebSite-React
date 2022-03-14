@@ -9,16 +9,19 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const Footer = () => {
-  const socialMediaIcons = [
-    FacebookIcon,
-    TwitterIcon,
-    LinkedInIcon,
-    WhatsAppIcon,
-  ];
   return (
     <div className="footerContainter">
-      <Grid container spacing={2} sx={{ color: "white" }}>
-        <Grid item xs={6} md={3} ml={2}>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          color: "white",
+          width: "100%",
+          m: "0px auto",
+          textAlign: "center",
+        }}
+      >
+        <Grid item xs={12} sm={6} md={3}>
           <Typography
             variant="h6"
             gutterBottom
@@ -31,7 +34,7 @@ const Footer = () => {
             9191919191 (call) <br /> 9191919192 (Whatsapp)
           </Typography>
         </Grid>
-        <Grid item xs={5} md={3} ml={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <Typography
             variant="h6"
             gutterBottom
@@ -44,7 +47,7 @@ const Footer = () => {
             Frequent Questions <br /> Shipping & returns <br /> Contact us
           </Typography>
         </Grid>
-        <Grid item xs={6} md={3} ml={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <Typography
             variant="h6"
             gutterBottom
@@ -57,7 +60,7 @@ const Footer = () => {
             Terms of use <br /> Condition of contracts <br /> Cookies policy
           </Typography>
         </Grid>
-        <Grid item xs={5} md={2} ml={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <Typography
             variant="h6"
             gutterBottom
@@ -66,7 +69,7 @@ const Footer = () => {
           >
             Follow Us
           </Typography>
-          <Grid container sx={{ mb: "10px" }}>
+          <Grid container sx={{ mb: "10px" }} className="iconContainer">
             <Grid item xs={6} lg={3} sx={{ mb: "10px" }}>
               <Fab
                 color="primary"
@@ -77,7 +80,7 @@ const Footer = () => {
                 <FacebookIcon />
               </Fab>
             </Grid>
-            <Grid itemxs={6} lg={3}>
+            <Grid item xs={6} lg={3} sx={{ mb: "10px" }}>
               <Fab
                 color="primary"
                 aria-label="add"
@@ -99,7 +102,7 @@ const Footer = () => {
               </Fab>
             </Grid>
 
-            <Grid item xs={5} lg={2}>
+            <Grid item xs={6} lg={3}>
               <Fab
                 color="primary"
                 aria-label="add"

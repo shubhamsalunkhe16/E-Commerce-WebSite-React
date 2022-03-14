@@ -51,8 +51,10 @@ const Header = () => {
       sx={{
         backgroundColor: "#0F1111",
         zIndex: 100,
-        position: "relative",
-        width: "100%",
+        position: "sticky",
+        top: "0",
+        width: "101%",
+        ml: "-7px",
         borderRadius: "15px",
         mt: "10px",
       }}

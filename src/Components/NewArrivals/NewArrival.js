@@ -35,7 +35,7 @@ export default function AllProducts(props) {
             paddingLeft: 3,
             fontWeight: "bold",
             position: "relative",
-            top: "46px",
+            top: "40px",
           }}
         >
           New Products
@@ -47,7 +47,7 @@ export default function AllProducts(props) {
               return (
                 <Grid
                   item
-                  xs={6}
+                  xs={12}
                   md={4}
                   lg={2}
                   xl={2}
