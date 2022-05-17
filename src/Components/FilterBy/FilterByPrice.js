@@ -1,25 +1,25 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import Slider, { SliderThumb } from "@mui/material/Slider";
-import { styled } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Slider, { SliderThumb } from '@mui/material/Slider';
+import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import {
   setAllProducts,
   setFilteredProducts,
-} from "../../Redux/Actions/ProductActions";
-import { useState } from "react";
-import { useEffect } from "react";
+} from '../../Redux/Actions/ProductActions';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function ValueLabelComponent(props) {
   const { children, value } = props;
 
   return (
-    <Tooltip enterTouchDelay={0} placement="top" title={value}>
+    <Tooltip enterTouchDelay={0} placement='top' title={value}>
       {children}
     </Tooltip>
   );
@@ -31,35 +31,35 @@ ValueLabelComponent.propTypes = {
 };
 
 const AirbnbSlider = styled(Slider)(({ theme }) => ({
-  color: "#FAAF00",
+  color: '#FAAF00',
   height: 3,
-  padding: "13px 0",
-  "& .MuiSlider-thumb": {
+  padding: '13px 0',
+  '& .MuiSlider-thumb': {
     height: 27,
     width: 27,
-    backgroundColor: "#fff",
-    border: "1px solid currentColor",
-    "&:hover": {
-      boxShadow: "0 0 0 8px rgba(58, 133, 137, 0.16)",
+    backgroundColor: '#fff',
+    border: '1px solid currentColor',
+    '&:hover': {
+      boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
     },
-    "& .airbnb-bar": {
+    '& .airbnb-bar': {
       height: 9,
       width: 1,
-      backgroundColor: "currentColor",
+      backgroundColor: 'currentColor',
       marginLeft: 1,
       marginRight: 1,
     },
   },
-  "& .MuiSlider-track": {
+  '& .MuiSlider-track': {
     height: 3,
   },
-  "& .MuiSlider-rail": {
-    color: theme.palette.mode === "dark" ? "#bfbfbf" : "#d8d8d8",
-    opacity: theme.palette.mode === "dark" ? undefined : 1,
+  '& .MuiSlider-rail': {
+    color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
+    opacity: theme.palette.mode === 'dark' ? undefined : 1,
     height: 3,
   },
-  "& .MuiSlider-markLabel": {
-    color: "white",
+  '& .MuiSlider-markLabel': {
+    color: 'white',
   },
 }));
 
@@ -68,9 +68,9 @@ function AirbnbThumbComponent(props) {
   return (
     <SliderThumb {...other}>
       {children}
-      <span className="airbnb-bar" />
-      <span className="airbnb-bar" />
-      <span className="airbnb-bar" />
+      <span className='airbnb-bar' />
+      <span className='airbnb-bar' />
+      <span className='airbnb-bar' />
     </SliderThumb>
   );
 }
@@ -82,23 +82,23 @@ AirbnbThumbComponent.propTypes = {
 const marks = [
   {
     value: 5,
-    label: "5",
+    label: '5',
   },
   {
     value: 250,
-    label: "250",
+    label: '250',
   },
   {
     value: 500,
-    label: "500",
+    label: '500',
   },
   {
     value: 750,
-    label: "750",
+    label: '750',
   },
   {
     value: 1000,
-    label: "1000",
+    label: '1000',
   },
 ];
 
@@ -109,7 +109,7 @@ export default function FilterByPrice(props) {
 
   useEffect(() => {
     setpriceRange([5, 1000]);
-    console.log("*****cat change");
+    console.log('*****cat change');
   }, [props.selectedCategory]);
 
   const filterProducts = (e) => {
@@ -117,7 +117,7 @@ export default function FilterByPrice(props) {
     setpriceRange([minRange, maxRange]);
     props.setSelectedPriceRange([minRange, maxRange]);
     const filteredProductsByPrice = ProductsFromStore.filter((product) => {
-      if (props.selectedRating !== "") {
+      if (props.selectedRating !== '') {
         return (
           product.price > minRange &&
           product.price < maxRange &&
@@ -125,7 +125,7 @@ export default function FilterByPrice(props) {
           product.rating.rate >= props.selectedRating
         );
       } else {
-        console.log("props.selectedCategory", props.selectedCategory);
+        console.log('props.selectedCategory', props.selectedCategory);
 
         return (
           product.price > minRange &&
@@ -135,7 +135,7 @@ export default function FilterByPrice(props) {
         );
       }
     });
-    console.log("filteredProductsByPrice", filteredProductsByPrice);
+    console.log('filteredProductsByPrice', filteredProductsByPrice);
 
     dispatch(setFilteredProducts(filteredProductsByPrice));
   };
@@ -143,25 +143,25 @@ export default function FilterByPrice(props) {
   return (
     <Box
       sx={{
-        width: "95%",
-        p: "0px 20px",
-        backgroundColor: "rgb(15 17 17)",
-        color: "white",
-        borderRadius: "10px",
-        ml: "10px",
-        mt: "10px",
+        width: window.innerWidth > 800 ? '97%' : '95%',
+        p: '0px 20px',
+        backgroundColor: 'rgb(15 17 17)',
+        color: 'white',
+        borderRadius: '10px',
+        ml: '10px',
+        mt: '10px',
       }}
     >
-      <Typography sx={{ p: "10px 0px" }} variant="h6" component="div">
+      <Typography sx={{ p: '10px 0px' }} variant='h6' component='div'>
         Filter By Price
       </Typography>
-      <Divider variant="fullWidth" />
+      <Divider variant='fullWidth' />
       <AirbnbSlider
-        valueLabelDisplay="auto"
-        sx={{ mt: "15px" }}
+        valueLabelDisplay='auto'
+        sx={{ mt: '15px' }}
         components={{ Thumb: AirbnbThumbComponent }}
         getAriaLabel={(index) =>
-          index === 0 ? "Minimum price" : "Maximum price"
+          index === 0 ? 'Minimum price' : 'Maximum price'
         }
         value={priceRange}
         defaultValue={priceRange}

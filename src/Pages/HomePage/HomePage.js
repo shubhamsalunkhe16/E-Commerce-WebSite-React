@@ -1,16 +1,22 @@
-import React from "react";
-import HomePageBanner from "../../Components/HomePageBanner/HomePageBanner";
+import React, { useEffect } from 'react';
+import HomePageBanner from '../../Components/HomePageBanner/HomePageBanner';
 
-import "./HomePage.css";
-import NewArrivals from "../../Components/NewArrivals/NewArrival";
-import BannerCards from "../../Components/BannerCards/BannerCards";
+import './HomePage.css';
+import NewArrivals from '../../Components/NewArrivals/NewArrival';
+import BannerCards from '../../Components/BannerCards/BannerCards';
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scroll({
+      top: '0px',
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <>
-      <div className="homePageContainer">
+      <div className='homePageContainer'>
         <HomePageBanner />
-        <BannerCards />
         <NewArrivals />
       </div>
     </>

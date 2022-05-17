@@ -12,3 +12,20 @@
 #brandName {
   color: #faaf00;
 }
+
+@media only screen and (max-width: 900px){
+  
+.navItem {
+  text-decoration: none;
+  color: black; 
+}
+
+.brandName{
+  color: #faaf00; 
+}
+
+#menu-appbar .MuiMenuItem-root{
+  margin: 0px !important;
+  min-height: 28px !important;
+}
+}

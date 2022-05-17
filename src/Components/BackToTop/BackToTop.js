@@ -1,16 +1,16 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Zoom from "@mui/material/Zoom";
-import Header from "../Header/Header";
-import AppRoutes from "../../AppRoutes";
-import Footer from "../Footer/Footer";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import CssBaseline from '@mui/material/CssBaseline';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Zoom from '@mui/material/Zoom';
+import Header from '../Header/Header';
+import AppRoutes from '../../AppRoutes';
+import Footer from '../Footer/Footer';
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -22,13 +22,13 @@ function ScrollTop(props) {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
+      '#back-to-top-anchor'
     );
 
     if (anchor) {
       anchor.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: 'smooth',
+        block: 'center',
       });
     }
   };
@@ -37,8 +37,8 @@ function ScrollTop(props) {
     <Zoom in={trigger}>
       <Box
         onClick={handleClick}
-        role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        role='presentation'
+        sx={{ position: 'fixed', bottom: 16, right: 16 }}
       >
         {children}
       </Box>
@@ -52,18 +52,24 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
+  // React.useEffect(() => {
+  //   window.scroll({
+  //     top: '0px',
+  //     behavior: 'smooth',
+  //   });
+  // }, []);
   return (
     <React.Fragment>
       <CssBaseline />
       <Header />
       <Toolbar
-        id="back-to-top-anchor"
-        sx={{ position: "absolute", top: "0px" }}
+        id='back-to-top-anchor'
+        sx={{ position: 'absolute', top: '0px' }}
       />
       <AppRoutes />
       <Footer />
       <ScrollTop {...props}>
-        <Fab color="primary" size="small" aria-label="scroll back to top">
+        <Fab color='secondary' size='small' aria-label='scroll back to top'>
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

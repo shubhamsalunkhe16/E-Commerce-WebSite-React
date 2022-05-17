@@ -1,22 +1,19 @@
 import {
-  FETCH_ALL_PRODUCTS,
   SET_ALL_PRODUCTS,
-  FETCH_SELECTED_PRODUCT,
   REMOVE_SELECTED_PRODUCTS,
   SET_SELECTED_PRODUCTS,
   SET_FILTERED_PRODUCTS,
   ADD_TO_CART,
   REMOVE_FROM_CART,
   REMOVE_ALL_FROM_CART,
-  ADD_TO_CART_TOTAL_PRICE,
   ADD_QTY,
   REMOVE_QTY,
-} from "../Constants/ProductContants";
+} from '../Constants/ProductContants';
 import {
   getAllProducts,
   getProductsByCategory,
   getProductById,
-} from "../../Services/ProductService";
+} from '../../Services/ProductService';
 
 export const fetchandSetAllProducts = () => async (dispatch) => {
   const response = await getAllProducts();
@@ -31,7 +28,7 @@ export const fetchandSetProductsByCategory = (category) => async (dispatch) => {
 
 export const fetchandSetProductById = (productId) => async (dispatch) => {
   const response = await getProductById(productId);
-  console.log("***fetchandSetProductById", response.data);
+  console.log('***fetchandSetProductById', response.data);
 
   dispatch(setSelectedProduct(response.data));
 };
