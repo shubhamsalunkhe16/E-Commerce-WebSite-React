@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import DownloadSharpIcon from '@mui/icons-material/DownloadSharp';
+
 import Badge from '@mui/material/Badge';
 
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -26,9 +28,24 @@ const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const [isPWAappDownloaded, setIsPWAappDownloaded] = React.useState(true);
+
+  const [deferredPrompt, setDeferredPrompt] = React.useState(null);
+
   const shoppingCart = useSelector((state) => state.ShoppingCart);
 
   let navigate = useNavigate();
+
+  // var deferredPrompt;
+
+  React.useEffect(() => {
+    window.addEventListener('beforeinstallprompt', (event) => {
+      console.log('beforeinstallprompt fired');
+      event.preventDefault();
+      setDeferredPrompt(event);
+      setIsPWAappDownloaded(false);
+    });
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,6 +60,27 @@ const Header = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const installApp = (e) => {
+    if (deferredPrompt) {
+      console.log('deferredPrompt', deferredPrompt);
+
+      deferredPrompt.prompt();
+
+      deferredPrompt.userChoice.then((choiceResult) => {
+        console.log(choiceResult.outcome);
+
+        if (choiceResult.outcome === 'dismissed') {
+          console.log('User cancelled installation');
+        } else {
+          console.log('User added to home screen');
+          setIsPWAappDownloaded(true);
+        }
+      });
+
+      setDeferredPrompt(null);
+    }
   };
 
   return (
@@ -70,7 +108,6 @@ const Header = () => {
             MY STORE
           </NavLink>
         </Typography>
-
         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
           <IconButton
             size='large'
@@ -146,7 +183,6 @@ const Header = () => {
             My Store
           </NavLink>
         </Typography>
-
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (
             <Button
@@ -165,7 +201,6 @@ const Header = () => {
             </Button>
           ))}
         </Box>
-
         <Button
           sx={{ color: 'white', position: 'relative', top: '5px' }}
           variant='text'
@@ -177,36 +212,17 @@ const Header = () => {
             <AddShoppingCartIcon sx={{ color: 'white' }} />
           </Badge>
         </Button>
-
-        <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title='Open settings'>
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt='Sam Sharp' src='/static/images/avatar/2.jpg' />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: '45px' }}
-            id='menu-appbar'
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+        {!isPWAappDownloaded && (
+          <Button
+            sx={{ color: 'white', position: 'relative', top: '5px' }}
+            variant='text'
+            onClick={(event) => {
+              installApp(event);
             }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
           >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign='center'>{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
+            <DownloadSharpIcon sx={{ color: 'white', fontSize: '25px' }} />
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   );
