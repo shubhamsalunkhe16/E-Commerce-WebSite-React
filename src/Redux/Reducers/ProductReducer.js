@@ -8,12 +8,12 @@ import {
   REMOVE_ALL_FROM_CART,
   ADD_QTY,
   REMOVE_QTY,
-} from "../Constants/ProductContants";
+} from '../Constants/ProductContants';
 
 export const productReducer = (state = [], { type, payload }) => {
   switch (type) {
     case SET_ALL_PRODUCTS:
-      return [...state, ...payload];
+      return [...payload];
     default:
       return state;
   }

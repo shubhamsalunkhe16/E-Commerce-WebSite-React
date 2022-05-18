@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchandSetAllProducts } from "../../Redux/Actions/ProductActions";
-import Grid from "@mui/material/Grid";
-import Loader from "../../Components/Loader/Loader";
-import ProductCard from "../../Components/ProductCard/ProductCard";
-import { Box } from "@mui/material";
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchandSetAllProducts } from '../../Redux/Actions/ProductActions';
+import Grid from '@mui/material/Grid';
+import Loader from '../../Components/Loader/Loader';
+import ProductCard from '../../Components/ProductCard/ProductCard';
+import { Box } from '@mui/material';
 
 export default function AllProducts() {
   const [isLoading, setisLoading] = useState(true);
   const dispatch = useDispatch();
   const ProductsFromStoreInitial = useSelector((state) => state.allProducts);
   const ProductsFromStore = useSelector((state) => state.filteredProducts);
+
+  console.log('allProducts', ProductsFromStoreInitial);
+  console.log('filteredProducts', ProductsFromStore);
 
   useEffect(() => {
     dispatch(fetchandSetAllProducts()).then(() => {
@@ -26,11 +29,11 @@ export default function AllProducts() {
         ProductsFromStoreInitial?.length !== 0 && (
           <Box
             sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              fontSize: "22px",
-              mt: "20px",
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              fontSize: '22px',
+              mt: '20px',
             }}
           >
             No Results Found
@@ -39,7 +42,7 @@ export default function AllProducts() {
       <Grid container spacing={3}>
         {ProductsFromStore?.map((product, i) => {
           return (
-            <Grid item xs={12} md={6} lg={4} xl={3} key={"product_" + i}>
+            <Grid item xs={12} md={6} lg={4} xl={3} key={'product_' + i}>
               <ProductCard
                 key={product.id}
                 imgSrc={product.image}

@@ -44,12 +44,12 @@ export default function SearchPage() {
             selectedPriceRange={selectedPriceRange}
             selectedRating={selectedRating}
           />
-          <FilterByPrice
+          {/* <FilterByPrice
             setSelectedPriceRange={setSelectedPriceRange}
             selectedCategory={selectedCategory}
             selectedPriceRange={selectedPriceRange}
             selectedRating={selectedRating}
-          />
+          /> */}
           <FilterByRating
             setSelectedRating={setSelectedRating}
             selectedCategory={selectedCategory}

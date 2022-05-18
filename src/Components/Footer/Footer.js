@@ -92,9 +92,9 @@ const Footer = () => {
                 aria-label='add'
                 size='small'
                 sx={{
-                  backgroundColor: '#0e76a8 ',
+                  backgroundColor: '#46c055',
                   '&.MuiButtonBase-root:hover': {
-                    bgcolor: '#0e76a8',
+                    bgcolor: '#46c055',
                     opacity: '0.5',
                   },
                 }}
