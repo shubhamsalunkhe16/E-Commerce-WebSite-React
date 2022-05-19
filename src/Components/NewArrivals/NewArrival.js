@@ -75,28 +75,28 @@ export default function AllProducts(props) {
             </>
           ) : (
             <>
-              <Grid item xs={6} md={3} lg={3} xl={3}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <Skeleton
                   variant='rectangular'
                   height={500}
                   sx={{ mt: '30px' }}
                 />
               </Grid>
-              <Grid item xs={6} md={3} lg={3} xl={3}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <Skeleton
                   variant='rectangular'
                   height={500}
                   sx={{ mt: '30px' }}
                 />
               </Grid>
-              <Grid item xs={6} md={3} lg={3} xl={3}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <Skeleton
                   variant='rectangular'
                   height={500}
                   sx={{ mt: '30px' }}
                 />
               </Grid>
-              <Grid item xs={6} md={3} lg={3} xl={3}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <Skeleton
                   variant='rectangular'
                   height={500}

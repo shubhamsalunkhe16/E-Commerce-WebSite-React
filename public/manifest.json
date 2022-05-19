@@ -3,8 +3,8 @@
     "short_name": "MyStore",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#FFE9D2",
-    "theme_color": "#FFE1C4",
+    "background_color": "#0f1111",
+    "theme_color": "#faaf00",
     "orientation": "portrait-primary",
     "icons": [
         {

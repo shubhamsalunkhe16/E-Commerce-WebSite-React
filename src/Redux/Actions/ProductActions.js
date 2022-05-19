@@ -17,8 +17,8 @@ import {
 
 export const fetchandSetAllProducts = () => async (dispatch) => {
   const response = await getAllProducts();
-  dispatch(setAllProducts(response.data));
-  dispatch(setFilteredProducts(response.data));
+  dispatch(setAllProducts(response?.data));
+  dispatch(setFilteredProducts(response?.data));
 };
 
 export const fetchandSetProductsByCategory = (category) => async (dispatch) => {

@@ -8,6 +8,7 @@ const assets = [
   '/',
   '/products',
   '/blog',
+  '/test',
 ];
 
 // cache size limit function
@@ -23,8 +24,8 @@ const limitCacheSize = (name, size) => {
 
 // install event
 self.addEventListener('install', (evt) => {
-  //console.log('service worker installed');
-
+  console.log('service worker installed');
+  self.skipWaiting();
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log('caching shell assets');
@@ -35,7 +36,31 @@ self.addEventListener('install', (evt) => {
 
 // activate event
 self.addEventListener('activate', (evt) => {
-  //console.log('service worker activated');
+  console.log('service worker activated');
+  //testtt
+  // sessionStorage.clear();
+
+  // localStorage.clear();
+
+  // caches.keys().then((keys) => {
+  //   keys.forEach((key) => caches.delete(key));
+  // });
+
+  // indexedDB.databases().then((dbs) => {
+  //   dbs.forEach((db) => indexedDB.deleteDatabase(db.name));
+  // });
+
+  // document.cookie = document.cookie.split(';').reduce((newCookie1, keyVal) => {
+  //   var pair = keyVal.trim().split('=');
+  //   if (pair[0]) {
+  //     if (pair[0] !== 'path' && pair[0] !== 'expires') {
+  //       newCookie1 += pair[0] + '=;';
+  //     }
+  //   }
+  //   return newCookie1;
+  // }, 'expires=Thu, 01 Jan 1970 00:00:00 UTC; path:/;');
+  //test
+
   evt.waitUntil(
     caches.keys().then((keys) => {
       //console.log(keys);
