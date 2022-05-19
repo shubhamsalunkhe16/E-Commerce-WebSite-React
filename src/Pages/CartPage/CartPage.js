@@ -65,7 +65,7 @@ const CartPage = () => {
                   margin: '20px auto',
                 }}
                 onClick={() => {
-                  navigate('/Products');
+                  navigate('/products');
                 }}
               >
                 See More Products

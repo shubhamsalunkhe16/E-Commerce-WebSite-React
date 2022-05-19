@@ -21,7 +21,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { useSelector } from 'react-redux';
 
-const pages = ['Products', 'Blogs'];
+const pages = ['products', 'blogs', 'test'];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -151,7 +151,7 @@ const Header = () => {
                     isActive ? 'navActive' : 'navItem'
                   }
                 >
-                  {page}
+                  {page.charAt(0).toUpperCase() + page.slice(1)}
                 </NavLink>
               </MenuItem>
             ))}
@@ -185,7 +185,7 @@ const Header = () => {
                   isActive ? 'navActive' : 'navItem'
                 }
               >
-                {page}
+                {page.charAt(0).toUpperCase() + page.slice(1)}
               </NavLink>
             </Button>
           ))}

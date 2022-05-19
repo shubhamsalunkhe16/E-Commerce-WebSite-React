@@ -6,8 +6,8 @@ const assets = [
   '/static/js/main.chunk.js',
   'index.html',
   '/',
-  '/Products',
-  '/Blog',
+  '/products',
+  '/blog',
 ];
 
 // cache size limit function

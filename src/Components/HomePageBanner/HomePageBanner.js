@@ -1,13 +1,13 @@
-import React from "react";
-import BannerSlider from "../BannerSlider/BannerSlider";
-import NewArrivals from "../NewArrivals/NewArrival";
+import React from 'react';
+import BannerSlider from '../BannerSlider/BannerSlider';
+import NewArrivals from '../NewArrivals/NewArrival';
 
-import "./HomePageBanner.css";
+import './HomePageBanner.css';
 
 const HomePageBanner = () => {
   return (
     <>
-      <div className="bannerContainer">
+      <div className='bannerContainer'>
         <BannerSlider />
       </div>
     </>
