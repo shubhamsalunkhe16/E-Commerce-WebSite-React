@@ -21,12 +21,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { useSelector } from 'react-redux';
 
-const pages = ['Products', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Products', 'Blogs'];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const [isPWAappDownloaded, setIsPWAappDownloaded] = React.useState(true);
 
@@ -48,16 +46,9 @@ const Header = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   const installApp = (e) => {
