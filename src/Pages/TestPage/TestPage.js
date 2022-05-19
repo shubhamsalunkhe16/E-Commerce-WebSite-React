@@ -14,8 +14,6 @@ const TestPage = () => {
       <h4>Test to access Camera of your device</h4>
       <GetImage />
       <br />
-      <br />
-      <br />
       <h4>Test to access Location of your device</h4>
       <GetLocation />
     </div>

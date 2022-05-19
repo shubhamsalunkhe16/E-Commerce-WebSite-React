@@ -75,17 +75,49 @@ export default function AllProducts(props) {
             </>
           ) : (
             <>
-              {new Array(6).fill('').map(() => {
-                return (
-                  <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
-                    <Skeleton
-                      variant='rectangular'
-                      height={500}
-                      sx={{ mt: '30px' }}
-                    />
-                  </Grid>
-                );
-              })}
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <Skeleton
+                  variant='rectangular'
+                  height={500}
+                  sx={{ mt: '30px' }}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <Skeleton
+                  variant='rectangular'
+                  height={500}
+                  sx={{ mt: '30px' }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <Skeleton
+                  variant='rectangular'
+                  height={500}
+                  sx={{ mt: '30px' }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <Skeleton
+                  variant='rectangular'
+                  height={500}
+                  sx={{ mt: '30px' }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <Skeleton
+                  variant='rectangular'
+                  height={500}
+                  sx={{ mt: '30px' }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <Skeleton
+                  variant='rectangular'
+                  height={500}
+                  sx={{ mt: '30px' }}
+                />
+              </Grid>
             </>
           )}
         </Grid>
