@@ -47,7 +47,7 @@ export default function AllProducts(props) {
             New Products
           </Box>
 
-          {ProductsFromStore.length === 0 ? (
+          {ProductsFromStore.length !== 0 ? (
             <>
               {ProductsFromStore?.map((product) => {
                 return (
