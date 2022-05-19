@@ -1,7 +1,6 @@
 import React from 'react';
 import GetImage from './GetImage';
 import GetLocation from './GetLocation';
-import GetLocation1 from './GetLocation1';
 
 const TestPage = () => {
   return (
