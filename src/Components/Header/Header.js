@@ -36,8 +36,6 @@ const Header = () => {
 
   let navigate = useNavigate();
 
-  // var deferredPrompt;
-
   React.useEffect(() => {
     window.addEventListener('beforeinstallprompt', (event) => {
       console.log('beforeinstallprompt fired');

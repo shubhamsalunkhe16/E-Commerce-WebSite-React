@@ -20,7 +20,12 @@
     {
       "src": "./Images/android-icon-192x192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192" 
+    },
+    {
+      "src": "./Images/android-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"  
     },
     {
       "src": "./Images/ms-icon-310x310.png", 
@@ -28,7 +33,7 @@
       "sizes": "310x310"
     }
   ],
-  "start_url": "http://localhost:3000/", 
+  "start_url": "/", 
   "display": "standalone",
   "theme_color": "#fff",
   "background_color": "#000"
