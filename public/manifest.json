@@ -1,7 +1,7 @@
 {
-    "name": "Food Ninja",
-    "short_name": "FoodNinja",
-    "start_url": "/index.html",
+    "name": "My Store",
+    "short_name": "MyStore",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#FFE9D2",
     "theme_color": "#FFE1C4",
