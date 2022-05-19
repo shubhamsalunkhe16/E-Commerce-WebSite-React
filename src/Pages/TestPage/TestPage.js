@@ -1,6 +1,7 @@
 import React from 'react';
 import GetImage from './GetImage';
 import GetLocation from './GetLocation';
+import GetLocation1 from './GetLocation1';
 
 const TestPage = () => {
   return (
@@ -18,6 +19,8 @@ const TestPage = () => {
       <br />
       <h4>Test to access Location of your device</h4>
       <GetLocation />
+      /*/*/*/*/*/*//*
+      <GetLocation1 />
     </div>
   );
 };
