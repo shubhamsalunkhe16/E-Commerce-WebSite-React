@@ -9,22 +9,23 @@
 
 .bannerContainer {
   width: 100%;
-  background-color: #a8a8a8;
+  background-color: #e7e7e7;
   height: auto;
   position: relative;
   top: 0;
   overflow: hidden;
-  animation: bannerLoader 1s linear 1s infinite alternate;
 }
 
 .slick-slide {
-  height: calc(100vh - 150px);
+  /* height: calc(100vh - 150px); */
+  overflow: hidden;
 }
 
 .slick-slide img {
-  height: calc(100vh - 150px);
+  /* height: calc(100vh - 150px); */
+  overflow: hidden;
   object-fit: cover;
-  object-position: right;
+  object-position: 20% 50%;
 }
 
 .slick-prev {
