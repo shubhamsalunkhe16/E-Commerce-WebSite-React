@@ -19,8 +19,6 @@ const TestPage = () => {
       <br />
       <h4>Test to access Location of your device</h4>
       <GetLocation />
-      /*/*/*/*/*/*//*
-      <GetLocation1 />
     </div>
   );
 };

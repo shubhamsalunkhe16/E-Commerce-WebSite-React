@@ -45,7 +45,7 @@ class GetLocation extends React.Component {
     ) : !this.props.isGeolocationEnabled ? (
       <div>Geolocation is not enabled</div>
     ) : this.props.coords ? (
-      <table>
+      <table style={{ margin: '0 auto' }}>
         <tbody>
           <tr>
             <td>latitude</td>
