@@ -7,7 +7,7 @@ const TestPage = () => {
     <div style={{ textAlign: 'center', paddingTop: '25px' }}>
       <h4>
         Test to access <span style={{ color: '#faaf00' }}>Files</span> from your
-        Device
+        device
       </h4>
       <br />
       <input type='file' name='testFile' id='testFile' />
@@ -16,13 +16,13 @@ const TestPage = () => {
       <br />
       <h4>
         Test to access <span style={{ color: '#faaf00' }}>Camera</span> of your
-        Device
+        device
       </h4>
       <GetImage />
       <br />
       <h4>
         Test to access <span style={{ color: '#faaf00' }}>Location</span> of
-        your Device
+        your device
       </h4>
       <GetLocation />
     </div>
