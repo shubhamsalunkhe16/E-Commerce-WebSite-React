@@ -24,37 +24,42 @@ export default function AllProducts() {
 
   return (
     <>
-      {ProductsFromStoreInitial?.length === 0 && <Loader />}
-      {ProductsFromStore?.length === 0 &&
-        ProductsFromStoreInitial?.length !== 0 && (
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              fontSize: '22px',
-              mt: '20px',
-            }}
-          >
-            No Results Found
-          </Box>
-        )}
-      <Grid container spacing={3}>
-        {ProductsFromStore?.map((product, i) => {
-          return (
-            <Grid item xs={12} md={6} lg={4} xl={3} key={'product_' + i}>
-              <ProductCard
-                key={product.id}
-                imgSrc={product.image}
-                title={product.title}
-                rating={product.rating.rate}
-                price={product.price}
-                product={product}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          {ProductsFromStore?.length === 0 &&
+            ProductsFromStoreInitial?.length !== 0 && (
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  fontSize: '22px',
+                  mt: '20px',
+                }}
+              >
+                No Results Found
+              </Box>
+            )}
+          <Grid container spacing={3}>
+            {ProductsFromStore?.map((product, i) => {
+              return (
+                <Grid item xs={12} md={6} lg={4} xl={3} key={'product_' + i}>
+                  <ProductCard
+                    key={product.id}
+                    imgSrc={product.image}
+                    title={product.title}
+                    rating={product.rating.rate}
+                    price={product.price}
+                    product={product}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </>
+      )}
     </>
   );
 }

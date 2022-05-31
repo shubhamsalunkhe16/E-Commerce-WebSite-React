@@ -52,12 +52,6 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
-  // React.useEffect(() => {
-  //   window.scroll({
-  //     top: '0px',
-  //     behavior: 'smooth',
-  //   });
-  // }, []);
   return (
     <React.Fragment>
       <CssBaseline />
