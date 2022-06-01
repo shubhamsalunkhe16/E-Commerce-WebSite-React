@@ -32,7 +32,7 @@ const Footer = () => {
           </Typography>
           <Typography variant='body2' gutterBottom component='div'>
             9191919191 (call) <br /> 9191919192 (Whatsapp) <br />
-            Version - 0.1.3
+            Version - 0.1.4
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
